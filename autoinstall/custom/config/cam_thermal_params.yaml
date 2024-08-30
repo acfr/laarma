@@ -1,0 +1,14 @@
+#camera_ns: "camera_thermal"
+frame_id: "camera_thermal_link"
+camera_serial: "M0000769"
+camera_info_url: "file:///mnt/config/cam_thermal_info.yaml"
+pixel_format: "YUV422_8"
+color_map: "Grayscale"
+contrast_mode: "AdaptiveFixed"
+overlay: False
+#flip_horizontal: true
+#flip_vertical: true
+downsampling_ratio: 3
+use_system_default_qos: true
+viz: false
+

@@ -1,0 +1,13 @@
+topics:
+  - [/camera_far/throttled/resized/image/compressed]
+  - [/camera_near/throttled/resized/image/compressed]
+  - [/camera_near/zoomed/throttled/resized/image/compressed]
+  - [/camera_near/zoomed2/throttled/resized/image/compressed]
+  - [/camera_thermal/throttled/relayed/image/compressed]
+  - [/neuvition_lidar/throttled/points]
+  - [/camera_far/resized/detection]
+  - [/camera_near/resized/detection]
+  - [/camera_near/zoomed/resized/detection]
+  - [/camera_near/zoomed2/resized/detection]
+  - [/camera_thermal/detection]
+video: /image_collage_maker/throttled/image

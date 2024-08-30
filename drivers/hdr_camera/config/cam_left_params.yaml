@@ -1,0 +1,16 @@
+camera_ns: "camera_left"
+frame_id: "camera_left_link"
+camera_serial: 231300976
+camera_info_url: "file:///ros_ws/src/lucid-hdr-gige-cam/config/camera_info.yaml"
+pixel_format: "BayerRG16"
+trigger_mode: 3
+trigger_fps: 10
+tonemap_method: 1
+use_image_crop: true
+debayer_method: 1
+use_max_packet_size: false
+use_binning: false
+flip_horizontal: true
+flip_vertical: true
+use_system_default_qos: true
+viz: true

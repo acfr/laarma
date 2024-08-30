@@ -1,0 +1,4 @@
+/**:
+  ros__parameters:
+    use_system_default_qos: True
+    classes_of_interest: ['cassowary']

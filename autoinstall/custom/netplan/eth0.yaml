@@ -1,0 +1,10 @@
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    eth0:
+      dhcp4: true
+      dhcp4-overrides:
+        use-mtu: false
+      mtu: 9000
+

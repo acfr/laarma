@@ -1,0 +1,6 @@
+use_scale: false
+width: 640
+height: 480
+resize.image_raw.compressed:
+        format: 'jpeg'
+        quality: 95

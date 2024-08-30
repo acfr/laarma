@@ -1,0 +1,10 @@
+lidar_ns: "neuvition"
+laser_interval: 1
+frame_rate: 10
+color_mode: 0
+upstream_port: 6668
+upstream_host: "192.168.1.101"
+video_fusion: false
+use_ptp_time: true
+use_system_default_qos: true
+viz: true

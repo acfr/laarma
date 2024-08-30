@@ -1,0 +1,19 @@
+[Unit]
+Description=Sensors service with docker compose
+Requires=network-online.target ptp4l.service
+After=network-online.target ptp4l.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+WorkingDirectory=/home/its/autoinstall/custom/docker
+ExecStart=/home/its/autoinstall/custom/scripts/hosts-up.sh
+ExecStart=/bin/bash -c 'rm -rf /tmp/nv_jetson_model && cat /proc/device-tree/model > /tmp/nv_jetson_model'
+ExecStart=/usr/local/bin/docker-compose down
+ExecStart=/usr/local/bin/docker-compose --profile sensors up --detach --remove-orphans --force-recreate
+ExecStop=/usr/local/bin/docker-compose down
+ExecStop=sleep 10
+
+[Install]
+WantedBy=multi-user.target
+

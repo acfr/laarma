@@ -1,0 +1,16 @@
+topics:
+  - [/camera_far/resized/image/compressed]
+  - [/camera_near/resized/image/compressed]
+  - [/camera_near/zoomed/resized/image/compressed]
+  - [/camera_thermal/image/compressed]
+  - [/detection_trigger/camera_far]
+  - [/detection_trigger/camera_far/filtered]
+  - [/detection_trigger/camera_near]
+  - [/detection_trigger/camera_near/filtered]
+  - [/detection_trigger/camera_near_zoomed]
+  - [/detection_trigger/camera_near_zoomed/filtered]
+  - /detection_trigger/camera_thermal
+  - [/detection_trigger/camera_thermal/filtered]
+  - [/neuvition_lidar/points]
+  - [/event_trigger/event]
+  - [/event_trigger/event_signal]

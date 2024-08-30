@@ -1,0 +1,7 @@
+width: 640
+height: 480
+offset_x: 800
+offset_y: 450
+out.image_raw.compressed:
+        format: 'jpeg'
+        quality: 95

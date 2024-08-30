@@ -1,0 +1,24 @@
+image_width: 640
+image_height: 480
+camera_name: 'camera_thermal'
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [ 400.000000, 0.000000, 320.000000, 
+            0.000000, 400.000000, 240.000000,
+            0.000000, 0.000000, 1.000000]
+distortion_model: rational_polynomial
+distortion_coefficients:
+  rows: 1
+  cols: 4
+  data: [ 0.000000, 0.000000, 0.000000, 0.000000]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [ 400.000000, 0.000000, 320.000000, 0.0,
+            0.000000, 400.000000, 240.000000, 0.0,
+            0.000000, 0.000000, 1.000000, 0.0]

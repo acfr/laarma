@@ -1,0 +1,2 @@
+#!/bin/bash
+timeout --preserve-status --foreground 60 ros2 bag record /camera_far/throttled/resized/compressed /camera_far/throttled/resized/camera_info /camera_near/throttled/resized/compressed /camera_near/throttled/resized/camera_info /camera_near/zoomed/throttled/resized/compressed /camera_near/zoomed/throttled/resized/camera_info /camera_thermal/throttled/resized/compressed /camera_thermal/throttled/resized/camera_info /neuvition_lidar/throttled/points /tf_static

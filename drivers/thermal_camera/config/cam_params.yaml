@@ -1,0 +1,10 @@
+camera_ns: "thermal_camera"
+frame_id: "thermal_camera_link"
+camera_serial: "M0000769"
+camera_info_url: "file:///ros_ws/src/lucid-hdr-gige-cam/config/camera_info.yaml"
+contrast_mode: AdaptiveFixed
+overlay: true
+flip_horizontal: false
+flip_vertical: false
+use_system_default_qos: true
+viz: true

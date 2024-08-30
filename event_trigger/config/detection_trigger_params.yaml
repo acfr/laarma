@@ -1,0 +1,11 @@
+/**:
+  ros__parameters:
+    use_system_default_qos: True
+    classes_of_interest: ['cassowary']
+    coi_score_threshold: 0.6
+    enable_bg_class_filter: True
+    background_classes: ['car', 'truck', 'bus', 'person']
+    bg_class_overlapping_threshold: 0.7
+    enable_roi: True
+    region_of_interest: [0, 140, 640, 480]
+    non_roi_score_threshold: 0.98

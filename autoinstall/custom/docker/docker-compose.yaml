@@ -1,0 +1,86 @@
+x-defaults: &defaults
+  image: laarma:latest
+  restart: "no"
+  ipc: "host"
+  pid: "host"
+  network_mode: "host"
+  runtime: "nvidia"
+  devices:
+    - /dev/gpiochip0 # for Jetson.GPIO lib
+  volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /home/its/autoinstall/custom/config:/mnt/config
+    - /home/its/autoinstall/custom/launch:/mnt/launch
+    - /home/its/autoinstall/custom/scripts:/mnt/scripts
+    - /mnt/ssd/ml:/mnt/ssd/ml
+    - /:/mnt/emmc # Required for monitoring the emmc from within the container
+    - /mnt/ssd/logging:/mnt/ssd/logging
+    - /tmp/argus_socket:/tmp/argus_socket
+    - /etc/enctune.conf:/etc/enctune
+    - /etc/nv_tegra_release:/etc/nv_tegra_release
+    - /tmp/nv_jetson_model:/tmp/nv_jetson_model
+    - /home/its/data_logging:/opt/acfr/underlay_ws/src/data_logging # Only required for data logging service
+    - /home/its/event_trigger:/opt/acfr/underlay_ws/src/event_trigger # Only required for event trigger service
+  environment:
+    TZ: Australia/Brisbane
+    RMW_IMPLEMENTATION: rmw_cyclonedds_cpp
+    CYCLONEDDS_URI: file:///mnt/config/cyclonedds.xml
+    ROS_AUTOMATIC_DISCOVERY_RANGE: LOCALHOST
+    JETSON_MODEL_NAME: JETSON_ORIN # for Jetson.GPIO lib
+
+services:
+  neuvition-lidar:
+    container_name: neuvition-lidar
+    <<: *defaults
+    profiles:
+      - sensors_disabled
+    command: ros2 launch /mnt/launch/neuvition_lidar_pipe.launch.py
+
+  cam-near:
+    container_name: cam-near
+    <<: *defaults
+    profiles:
+      - sensors
+    command: ros2 launch /mnt/launch/camera_near_pipe.launch.py log_level:=ERROR
+
+  cam-far:
+    container_name: cam-far
+    <<: *defaults
+    profiles:
+      - sensors
+    command: ros2 launch /mnt/launch/camera_far_pipe.launch.py log_level:=ERROR
+
+  cam-thermal:
+    container_name: cam-thermal
+    <<: *defaults
+    profiles:
+      - sensors
+    command: /bin/bash -c "sleep 20 && ros2 launch /mnt/launch/camera_thermal_pipe.launch.py log_level:=ERROR"
+
+  vid-streamer:
+    container_name: vid-streamer
+    <<: *defaults
+    profiles:
+      - sensors
+    command: /bin/bash -c "ros2 launch /mnt/launch/image_collage_pipe.launch.py & ros2 launch ros_deep_learning video_output.ros2.launch topic:=/image_collage_maker/image output_codec:=h265 output:=rtsp://@:1000/cameras"
+
+  event-trigger:
+    container_name: event-trigger
+    <<: *defaults
+    profiles:
+      - sensors
+    command: /bin/bash -c "ros2 launch /mnt/launch/event_trigger.launch.py & python3 /mnt/scripts/gpio.py"
+
+  logging:
+    container_name: logging
+    <<: *defaults
+    profiles:
+      - sensors
+    command: /bin/bash -c "sleep 30 && ros2 launch /mnt/launch/data_logging.launch.py"
+
+  diagnostics:
+    container_name: diagnostics
+    <<: *defaults
+    profiles:
+      - sensors
+    command: /bin/bash -c "python3 /mnt/scripts/diagnostics.py"

@@ -1,0 +1,16 @@
+
+detection_triggers:
+- topic: /detection_trigger/camera_near
+  transition: [[0.9, 0.1], [0.1, 0.9]]
+  schedule:
+  - from: 4
+    to: 21
+    likelihood: [[0.7, 0.45], [0.3, 0.55]]
+  threshold: 0.8
+- topic: /detection_trigger/camera_thermal
+  transition: [[0.9, 0.1], [0.1, 0.9]]
+  schedule:
+  - from: 0
+    to: 24
+    likelihood: [[0.7, 0.45], [0.3, 0.55]]
+  threshold: 0.8

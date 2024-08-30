@@ -1,0 +1,8 @@
+msgs_per_sec: 10.9
+use_wall_clock: True
+collage_rows: 2
+collage_cols: 2
+image_width: 320
+image_height: 240
+collage_show_stamp: True
+viz: False

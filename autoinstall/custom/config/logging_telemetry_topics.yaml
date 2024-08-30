@@ -1,0 +1,13 @@
+topics:
+  - [/detection_trigger/camera_far]
+  - [/detection_trigger/camera_far/filtered]
+  - [/detection_trigger/camera_near]
+  - [/detection_trigger/camera_near/filtered]
+  - [/detection_trigger/camera_near_zoomed]
+  - [/detection_trigger/camera_near_zoomed/filtered]
+  - [/detection_trigger/camera_near_zoomed2]
+  - [/detection_trigger/camera_near_zoomed2/filtered]
+  - [/detection_trigger/camera_thermal]
+  - [/detection_trigger/camera_thermal/filtered]
+  - [/event_trigger/event]
+  - [/event_trigger/event_signal]

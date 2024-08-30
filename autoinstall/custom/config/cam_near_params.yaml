@@ -1,0 +1,22 @@
+#camera_ns: "camera_near"
+frame_id: "camera_near_link"
+camera_serial: 232901625
+camera_info_url: "file:///mnt/config/cam_near_info.yaml"
+pixel_format: "RGB8"
+timeout_ms: 5000
+trigger_mode: 0
+trigger_fps: 10
+use_binning: false
+use_image_crop: true
+image_width: 2080
+image_height: 1560
+image_offset_x: 800
+image_offset_y: 200
+exposure_time_us: 20000
+use_max_packet_size: true
+use_ptp_time: false
+#flip_horizontal: true
+#flip_vertical: true
+use_system_default_qos: true
+viz: false
+

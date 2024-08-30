@@ -1,0 +1,6 @@
+engine_file_path: '/mnt/ssd/ml/yolov8/yolov8m_cass240523_thermal.engine'
+class_names: ["person", "bicycle", "car", "motorcycle", "bus", "truck", "cassowary"]
+num_labels: 7
+score_thres: 0.7
+use_system_default_qos: true
+viz: false

@@ -1,0 +1,6 @@
+/**:
+  ros__parameters:
+    use_system_default_qos: True
+    classes_of_interest: ['cassowary']
+    enable_roi: True
+    region_of_interest: [10, 185, 630, 430]
